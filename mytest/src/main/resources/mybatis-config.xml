@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 全局的设置信息-->
+	<settings>
+		<!-- 配置用生成的主键值 -->
+		<setting name="useGeneratedKeys" value="true"/>
+		<!-- 启用缓存 -->
+		<setting name="cacheEnabled" value="true"/>
+		<!-- 启用延迟加载功能 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!-- 按需要延迟加载-->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!-- 开启驼峰命名(方便自动映射)  -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<!-- 批量设置别名(可以不配) 作用：就是在mapper.xml文件中直接写类名，也可以不用写全路径名。 -->
+	<typeAliases>
+         <package name="cn.e3mall.manager.po" />
+    </typeAliases>
+	
+	<!-- 配置分页插件 -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+		</plugin>
+	</plugins>
+	
+</configuration>

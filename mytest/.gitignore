@@ -1,0 +1,17 @@
+*target
+*.settings
+*.metadata
+*.DS_Store
+*.svn
+*bin
+*RemoteSystemsTempFiles
+*build
+*.project
+*.classpath
+*.class
+*.idea
+*.iml
+*out
+*.myumldata
+*.mymetadata
+/logs/
