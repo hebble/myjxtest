@@ -20,6 +20,6 @@ public class MyApplication {
 //		springApplication.setBannerMode(Mode.OFF);
 		/** 运行 */
 		springApplication.run(args);
-		System.out.println("----------------MyApplication已启动!---------------");
+		System.out.println("---------------- MyApplication已启动! ---------------");
 	}
 }

@@ -137,7 +137,6 @@ public class MySpringJunitTest {
 	public void test5() throws WeixinException {
 		Weixin weixin = weixinManager.getWeixin();
 		OAuthToken oAuthToken = weixin.getOAuthToken();
-		
 		weixin.createQrcode(TicketType.QR_SCENE, "E:\\myQrcode.png", 123, 60*60);
 	}
 	
