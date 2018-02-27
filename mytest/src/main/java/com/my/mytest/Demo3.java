@@ -17,9 +17,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.core.io.Resource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.alibaba.fastjson.JSON;
 import com.my.mytest.model.BeanInject;
-import com.my.pojo.ResultData;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Import({BeanInject.class})
@@ -84,6 +82,20 @@ public class Demo3 {
     	String str1="120.00";
     	BigDecimal bd=new BigDecimal(str1);
     	System.out.println(bd);
+    }
+    
+    @Test
+    public void test3() {
+    	switch ("1") {
+		case "1":
+		case "2":
+			System.out.println("我是2");
+//			break;
+		case "3":
+			System.out.println("我是3");
+		default:
+			break;
+		}
     }
 }
 
