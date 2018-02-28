@@ -113,7 +113,7 @@ public class WxController {
 	
 	@RequestMapping("/wxPay")
 	public Map<String, String> wxPay(HttpServletRequest request, String openid) throws WeixinException {
-		log.info("------------调用统一下单开始--------------");
+		log.info("------------微信调用统一下单开始--------------");
 		String appId = Configuration.getOAuthAppId();
 		String nonceStr = RandomUtil.generateString(32);
 		
@@ -147,7 +147,7 @@ public class WxController {
 
 			String finalsign = SignUtil.getSign(finalpackage, Configuration.getProperty("weixin4j.pay.partner.key"));
 			finalpackage.put("paySign", finalsign);
-
+			log.info("------------微信调用统一下单开结束--------------");
 			return finalpackage;
 		} else {
 			String result_code = unifiedOrderResult.getResult_code();
@@ -155,6 +155,7 @@ public class WxController {
 			String err_code = unifiedOrderResult.getErr_code();
 			String err_code_des = unifiedOrderResult.getErr_code_des();
 			log.warn("调用微信服务器统一下单出现错误,获取到微信服务器返回数据result_code={},return_msg={},err_code={},err_code_des={}",result_code,return_msg,err_code,err_code_des);
+			log.info("------------微信调用统一下单开结束--------------");
 			throw new BusinessException("微信支付失败");
 		}
 		
