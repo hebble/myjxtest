@@ -1,4 +1,4 @@
-package com.my.utils.map.impl;
+package com.my.utils.amap.impl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,10 +13,10 @@ import com.my.enums.RequestTypeEnum;
 import com.my.pojo.ResultData;
 import com.my.utils.ConfigManager;
 import com.my.utils.HttpUtil;
-import com.my.utils.map.AbstractMapGeoCoderBiz;
-import com.my.utils.map.enums.LocationBizErrorCode;
-import com.my.utils.map.factory.MapGeoCoderFactory;
-import com.my.utils.map.model.MapInfoExp;
+import com.my.utils.amap.AbstractMapGeoCoderBiz;
+import com.my.utils.amap.enums.LocationBizErrorCode;
+import com.my.utils.amap.factory.MapGeoCoderFactory;
+import com.my.utils.amap.model.MapInfoExp;
 
 import lombok.extern.slf4j.Slf4j;
 

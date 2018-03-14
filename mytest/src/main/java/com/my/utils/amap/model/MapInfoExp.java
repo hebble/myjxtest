@@ -1,4 +1,4 @@
-package com.my.utils.map.model;
+package com.my.utils.amap.model;
 
 import java.io.Serializable;
 

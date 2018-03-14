@@ -1,4 +1,4 @@
-package com.my.utils.map;
+package com.my.utils.amap;
 
 import java.math.BigDecimal;
 
@@ -6,7 +6,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.InitializingBean;
 
 import com.my.pojo.ResultData;
-import com.my.utils.map.model.MapInfoExp;
+import com.my.utils.amap.model.MapInfoExp;
 
 /**
  * @author lixiaohua

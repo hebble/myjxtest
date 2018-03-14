@@ -1,4 +1,4 @@
-package com.my.utils.map.enums;
+package com.my.utils.amap.enums;
 
 import com.my.pojo.ServerCode;
 

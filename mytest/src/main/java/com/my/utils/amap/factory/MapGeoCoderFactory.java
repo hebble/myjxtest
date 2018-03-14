@@ -1,12 +1,12 @@
-package com.my.utils.map.factory;
+package com.my.utils.amap.factory;
+
+import static com.my.utils.amap.enums.LocationBizErrorCode.NO_GATEWAY_NAME;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import com.my.pojo.ResultData;
-import com.my.utils.map.AbstractMapGeoCoderBiz;
-
-import static com.my.utils.map.enums.LocationBizErrorCode.NO_GATEWAY_NAME;
+import com.my.utils.amap.AbstractMapGeoCoderBiz;
 /**
  * @author lixiaohua
  * @version 1.0
