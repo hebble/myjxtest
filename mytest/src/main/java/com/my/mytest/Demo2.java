@@ -1,6 +1,7 @@
 package com.my.mytest;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,6 +85,13 @@ public class Demo2 {
 		itemImgs.add("2.jpg");
 		itemImgs.add("3.jpg");
 		System.out.println(JSON.toJSONString(itemImgs));
+	}
+	
+	@Test
+	public void test7() {
+		BigDecimal bigDecimal = new BigDecimal("0.1");
+		System.out.println(bigDecimal);
+		System.out.println(bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
 	}
 	
 }

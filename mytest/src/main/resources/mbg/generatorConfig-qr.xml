@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry
+          location="D:\develop\maven_repo\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"/>
+  <context id="my" targetRuntime="MyBatis3" defaultModelType="flat">
+    <!-- RowBounds pagination -->
+    <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+    <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+    <commentGenerator>
+      <property name="suppressDate" value="false"/>
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://192.168.1.3:3306/joyxuan_db?useUnicode=true"
+                    userId="root" password="ooWUoo2017!"/>
+
+    <javaModelGenerator targetPackage="com.jx.qr.persistence.auto.model"
+                        targetProject=".\src">
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.jx.qr.persistence.auto.mapping"
+                     targetProject=".\src">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+    <javaClientGenerator targetPackage="com.jx.qr.persistence.auto.mapper"
+                         targetProject="./src" type="XMLMAPPER">
+      <property name="enableSubPackages" value="true"/>
+      <!-- <property name="rootInterface" value="com.jx.common.dao.BaseDaoMybatis"/>
+      <property name="rootService" value="com.jx.common.service.AbsBaseSeviceMybatis"/> -->
+    </javaClientGenerator>
+
+    <!---
+        1、如果表id字段为主键自增曾配置：<generatedKey column="id" sqlStatement="JDBC"/>
+        2、如果当表列出现大对象(如列blob)时请使用:<columnOverride column="blob" jdbcType="VARCHAR"/>
+    -->
+    <table tableName="t_qr_gathering_cash_order" domainObjectName="TQrGatheringCashOrder"
+           enableCountByExample="true" enableUpdateByExample="true"
+           enableDeleteByExample="true" enableSelectByExample="true"
+           selectByExampleQueryId="true">
+           <generatedKey column="id" sqlStatement="JDBC"/>
+    </table>
+
+
+  </context>
+</generatorConfiguration>

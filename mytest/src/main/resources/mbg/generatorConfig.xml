@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	
+	<!-- 指定数据库驱动jar包 -->
+	<classPathEntry location="D:\develop\maven_repo\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"/>
+	
+	<context id="testTables" targetRuntime="MyBatis3">
+		<!--插件-->
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+    	<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
+    	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Query" />
+		</plugin>
+		
+		<commentGenerator>
+	      	<property name="suppressDate" value="false"/>
+	      	<property name="suppressAllComments" value="true"/>
+    	</commentGenerator>
+		<!--自定义注释生成器-->
+		<!-- <commentGenerator type="com.jx.tools.MyCommentGenerator"/> -->
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://192.168.1.3:3306/joyxuan_db?useUnicode=true"
+						userId="root" password="ooWUoo2017!"/>
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetPackage:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.my.persistence.auto.model"
+							targetProject="src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="true" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+
+		</javaModelGenerator>
+
+		<!-- targetPackage:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.my.persistence.auto.mapping"
+						 targetProject="src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator targetPackage="com.my.persistence.auto.mapper"
+							 targetProject="src/main/java" type="XMLMAPPER">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="true" />
+
+		</javaClientGenerator>
+
+		<!-- 配置表相关信息 -->
+		<table schema="joyxuan_db" tableName="t_space_dictionary" domainObjectName="Dictionary"
+			   enableCountByExample="true" enableUpdateByExample="true"
+			   enableDeleteByExample="true" enableSelectByExample="true"
+			   selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"  >
+
+		</table>
+
+	</context>
+</generatorConfiguration>
